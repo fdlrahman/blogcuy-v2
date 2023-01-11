@@ -30,8 +30,8 @@ function section3() {
             autoplay={{ delay: 5000 }}
           >
             {data.map((value, index) => (
-              <SwiperSlide>
-                <Post data={value} key={index}></Post>
+              <SwiperSlide key={index}>
+                <Post data={value}></Post>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -46,7 +46,7 @@ function Post({ data }) {
     <div className="my-2">
       <div className="image my-3 mb-7">
         <Link href={`/posts/${data.id}`}>
-          <Image src={data.img} width="450" height="200" />
+          <Image src={data.img} width="450" height="200" alt="image post" />
         </Link>
       </div>
       <div className="info sm:w-4/5 md:w-11/12">

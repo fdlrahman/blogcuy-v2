@@ -40,7 +40,7 @@ export function Article(data) {
             <p className="text-gray-500 text-lg text-center">{data.subtitle}</p>
 
             <div className="py-10">
-              <Image src={data.img} width={900} height={600}></Image>
+              <Image src={data.img} width={900} height={600} alt="jumbo image"></Image>
             </div>
 
             <div className="content text-gray-600 flex flex-col gap-4">{data.description}</div>

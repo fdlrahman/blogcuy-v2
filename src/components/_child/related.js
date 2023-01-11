@@ -30,7 +30,7 @@ function Post({ data }) {
     <div className="flex gap-3 my-4">
       <div className="image">
         <Link href={`/posts/${data.id}`}>
-          <Image src={data.img} width={200} height={200}></Image>
+          <Image src={data.img} width={200} height={200} alt="post image"></Image>
         </Link>
       </div>
       <div className="info">
