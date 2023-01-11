@@ -51,7 +51,7 @@ function Post({ data }) {
         </div>
         <p className="text-sm py-2">{data.subtitle}</p>
 
-        {data.author ? <Author></Author> : <></>}
+        {data.author ? <Author data={data.author}></Author> : <></>}
       </div>
     </div>
   );
