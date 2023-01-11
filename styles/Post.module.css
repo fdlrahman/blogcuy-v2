@@ -1,0 +1,7 @@
+.list {
+  display: inline-block;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+  margin-right: 10px;
+}
