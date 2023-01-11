@@ -38,19 +38,21 @@ const Slide = ({ data }) => {
   return (
     <div className="grid md:grid-cols-2">
       <div className="image">
-        <Image src={data.img} width={480} height={480} />
+        <Link href={`/posts/${data.id}`}>
+          <Image src={data.img} width={480} height={480} />
+        </Link>
       </div>
       <div className="info py-3 md:py-0 flex justify-center flex-col">
         <div className="cat">
-          <Link href={"/"} className="text-sky-600">
+          <Link href={`/posts/${data.id}`} className="text-sky-600">
             {data.category}
           </Link>
-          <Link href={"/"} className="text-gray-800">
+          <Link href={`/posts/${data.id}`} className="text-gray-800">
             - {data.published}
           </Link>
         </div>
         <div className="title">
-          <Link href={"/"}>
+          <Link href={`/posts/${data.id}`}>
             <h1 className="text-3xl sm:text-5xl font-bold text-gray-800 hover:text-gray-700">
               {data.title}
             </h1>

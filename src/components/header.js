@@ -9,7 +9,9 @@ function header() {
           <input type="text" className="text-input" placeholder="Search..." />
         </div>
         <div className="shrink w-80 sm:order-2">
-          <a className="navbar-brand">Spy's Lab ,</a>
+          <Link href={"/"} className="navbar-brand">
+            Spy's Lab ,
+          </Link>
         </div>
         <div className="w-96 order-3 flex justify-center">
           <div className="flex gap-6">

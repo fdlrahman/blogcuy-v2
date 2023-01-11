@@ -7,8 +7,9 @@ import fetcher from "../../src/lib/fetcher";
 import Spinner from "../../src/components/_child/spinner";
 import Error from "../../src/components/_child/error";
 import { useRouter } from "next/router";
+import { SWRConfig } from "swr";
 
-export default function Page() {
+export default function Page({ fallback }) {
   const router = useRouter();
   const { pid } = router.query;
 
@@ -17,7 +18,11 @@ export default function Page() {
   if (isLoading) return <Spinner></Spinner>;
   if (isError) return <Error></Error>;
 
-  return <Article {...data}></Article>;
+  return (
+    <SWRConfig value={{ fallback }}>
+      <Article {...data}></Article>
+    </SWRConfig>
+  );
 }
 
 export function Article(data) {
@@ -30,7 +35,7 @@ export function Article(data) {
           </div>
 
           <div className="post py-3">
-            <h1 className="font-bold text-4xl text-center pb-3">{data.title}</h1>
+            <h1 className="font-bold text-4xl text-gray-800 text-center pb-3">{data.title}</h1>
 
             <p className="text-gray-500 text-lg text-center">{data.subtitle}</p>
 
@@ -41,7 +46,9 @@ export function Article(data) {
             <div className="content text-gray-600 flex flex-col gap-4">{data.description}</div>
           </div>
 
-          <Related></Related>
+          <div className="pt-5">
+            <Related></Related>
+          </div>
         </section>
       </Format>
     </>
@@ -52,7 +59,11 @@ export async function getStaticProps({ params }) {
   const posts = await getPost(params.pid);
 
   return {
-    props: posts,
+    props: {
+      fallback: {
+        "posts/": posts,
+      },
+    },
   };
 }
 
