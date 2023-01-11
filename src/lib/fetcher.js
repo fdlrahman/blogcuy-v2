@@ -10,5 +10,6 @@ export default function fetcher(endpoint) {
     data,
     isError: error,
     isLoading,
+    endpoint: `${baseUrl}/${endpoint}`,
   };
 }
