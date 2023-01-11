@@ -31,19 +31,21 @@ function Post({ data }) {
   return (
     <div className="my-2">
       <div className="image my-3">
-        <Image src={data.img} width="400" height="200" />
+        <Link href={`/posts/${data.id}`}>
+          <Image src={data.img} width="400" height="200" />
+        </Link>
       </div>
       <div className="info w-96 md:w-auto">
         <div className="cat text-sm">
-          <Link href={"/"} className="text-sky-600">
+          <Link href={`/posts/${data.id}`} className="text-sky-600">
             {data.category}
           </Link>
-          <Link href={"/"} className="text-gray-800">
+          <Link href={`/posts/${data.id}`} className="text-gray-800">
             - {data.published}
           </Link>
         </div>
         <div className="title">
-          <Link href={"/"} className="font-bold text-lg hover:text-gray-700">
+          <Link href={`/posts/${data.id}`} className="font-bold text-lg hover:text-gray-700">
             {data.title}
           </Link>
         </div>

@@ -51,19 +51,21 @@ function Post({ data }) {
   return (
     <div className="flex gap-3 my-4">
       <div className="image">
-        <div className="bg-gray-500 w-40 h-32" style={bg}></div>
+        <Link href={`/posts/${data.id}`}>
+          <div className="bg-gray-500 w-40 h-32" style={bg}></div>
+        </Link>
       </div>
       <div className="info">
         <div className="cat text-sm">
-          <Link href={"/"} className="text-sky-600">
+          <Link href={`/posts/${data.id}`} className="text-sky-600">
             {data.category}
           </Link>
-          <Link href={"/"} className="text-gray-800">
+          <Link href={`/posts/${data.id}`} className="text-gray-800">
             - {data.published}
           </Link>
         </div>
         <div className="title">
-          <Link href={"/"} className="font-bold text-1xl hover:text-gray-700">
+          <Link href={`/posts/${data.id}`} className="font-bold text-1xl hover:text-gray-700">
             {data.title}
           </Link>
         </div>
