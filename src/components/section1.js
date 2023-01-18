@@ -39,7 +39,7 @@ const Slide = ({ data }) => {
     <div className="grid md:grid-cols-2">
       <div className="image">
         <Link href={`/posts/${data.id}`}>
-          <Image src={data.img} width={480} height={480} />
+          <Image src={data.img} width={480} height={480} alt="image slide" />
         </Link>
       </div>
       <div className="info py-3 md:py-0 flex justify-center flex-col">

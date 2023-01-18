@@ -32,7 +32,7 @@ function Post({ data }) {
     <div className="my-2">
       <div className="image my-3">
         <Link href={`/posts/${data.id}`}>
-          <Image src={data.img} width="400" height="200" />
+          <Image src={data.img} width="400" height="200" alt="image post" />
         </Link>
       </div>
       <div className="info w-96 md:w-auto">

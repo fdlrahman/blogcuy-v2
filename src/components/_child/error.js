@@ -7,7 +7,7 @@ export default function error() {
       <h1 className="text-xl font-bold text-orange-600 pb-10">Something Went Wrong</h1>
 
       <div className="flex justify-center">
-        <Image src={"/images/not_found.png"} height={300} width={300}></Image>
+        <Image src={"/images/not_found.png"} alt="not found image" height={300} width={300}></Image>
       </div>
     </div>
   );
